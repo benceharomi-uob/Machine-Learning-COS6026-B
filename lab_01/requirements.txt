@@ -1,0 +1,9 @@
+numpy
+jupyter
+pandas
+matplotlib
+tensorflow
+pillow
+sklearn
+keras
+graphviz
