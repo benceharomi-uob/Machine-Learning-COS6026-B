@@ -97,17 +97,17 @@ df_breast_normalized.shape
 
 df_breast_normalized.head()
 
-"""PCA - keeping 2 components, then applying `fit_transform` on the training data"""
+"""PCA - keeping 3 components, then applying `fit_transform` on the training data"""
 
 from sklearn.decomposition import PCA
 
-pca_breast = PCA(n_components=2)
+pca_breast = PCA(n_components=3)
 principalComponents_breast = pca_breast.fit_transform(df_breast_normalized.iloc[:,:-1])
 
 """Converting from a numpy array to a pandas DataFrame"""
 
 principal_breast_Df = pd.DataFrame(data = principalComponents_breast
-             , columns = ['principal component 1', 'principal component 2'])
+             , columns = ['principal component 1', 'principal component 2', 'principal component 3'])
 principal_breast_Df['y'] = labels
 
 principal_breast_Df.head()
@@ -116,7 +116,7 @@ principal_breast_Df.head()
 
 print('Explained variation per principal component: {}'.format(pca_breast.explained_variance_ratio_))
 
-"""Visualizing the Breast Cancer data in two-dimensions"""
+"""Visualizing the Breast Cancer data in two-dimensions using seaborn's scatterplot (PC1 vs PC2)"""
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -131,6 +131,23 @@ sns.scatterplot(
     alpha=0.3
 )
 
+"""Seaborn's scatterplot for PC2 vs PC3"""
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(16,10))
+sns.scatterplot(
+    x='principal component 2', y='principal component 3',
+    hue="y",
+    palette=sns.color_palette('hls', 2),
+    data=principal_breast_Df,
+    legend='full',
+    alpha=0.3
+)
+
+"""PC1 vs PC2 using pyplot"""
+
 plt.figure()
 plt.figure(figsize=(10,10))
 plt.xticks(fontsize=12)
@@ -144,5 +161,23 @@ for target, color in zip(targets,colors):
     indicesToKeep = breast_dataset['label'] == target
     plt.scatter(principal_breast_Df.loc[indicesToKeep, 'principal component 1']
                , principal_breast_Df.loc[indicesToKeep, 'principal component 2'], c = color, s = 50)
+
+plt.legend(targets,prop={'size': 15})
+
+"""PC2 vs PC3 using pyplot"""
+
+plt.figure()
+plt.figure(figsize=(10,10))
+plt.xticks(fontsize=12)
+plt.yticks(fontsize=14)
+plt.xlabel('Principal Component - 2',fontsize=20)
+plt.ylabel('Principal Component - 3',fontsize=20)
+plt.title("Principal Component Analysis of Breast Cancer Dataset",fontsize=20)
+targets = ['Benign', 'Malignant']
+colors = ['r', 'g']
+for target, color in zip(targets,colors):
+    indicesToKeep = breast_dataset['label'] == target
+    plt.scatter(principal_breast_Df.loc[indicesToKeep, 'principal component 2']
+               , principal_breast_Df.loc[indicesToKeep, 'principal component 3'], c = color, s = 50)
 
 plt.legend(targets,prop={'size': 15})
