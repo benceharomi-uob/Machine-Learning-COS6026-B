@@ -17,8 +17,8 @@ from keras.datasets import cifar100
 
 """Printing the shape of the training and testing images"""
 
-print('Traning data shape:', x_train.shape)
-print('Testing data shape:', x_test.shape)
+print("Traning data shape:", x_train.shape)
+print("Testing data shape:", x_test.shape)
 
 """Printing the shape of the labels
 
@@ -34,148 +34,148 @@ import numpy as np
 classes = np.unique(y_train)
 nClasses = len(classes)
 
-print('Total number of outputs : ', nClasses)
-print('Output classes : ', classes)
+print("Total number of outputs : ", nClasses)
+print("Output classes : ", classes)
 
 """Creating a dictionary with the names of the classes"""
 
 label_dict = {
-0: 'apple',
-1: 'aquarium_fish',
-2: 'baby',
-3: 'bear',
-4: 'beaver',
-5: 'bed',
-6: 'bee',
-7: 'beetle',
-8: 'bicycle',
-9: 'bottle',
-10: 'bowl',
-11: 'boy',
-12: 'bridge',
-13: 'bus',
-14: 'butterfly',
-15: 'camel',
-16: 'can',
-17: 'castle',
-18: 'caterpillar',
-19: 'cattle',
-20: 'chair',
-21: 'chimpanzee',
-22: 'clock',
-23: 'cloud',
-24: 'cockroach',
-25: 'couch',
-26: 'crab',
-27: 'crocodile',
-28: 'cup',
-29: 'dinosaur',
-30: 'dolphin',
-31: 'elephant',
-32: 'flatfish',
-33: 'forest',
-34: 'fox',
-35: 'girl',
-36: 'hamster',
-37: 'house',
-38: 'kangaroo',
-39: 'computer_keyboard',
-40: 'lamp',
-41: 'lawn_mower',
-42: 'leopard',
-43: 'lion',
-44: 'lizard',
-45: 'lobster',
-46: 'man',
-47: 'maple_tree',
-48: 'motorcycle',
-49: 'mountain',
-50: 'mouse',
-51: 'mushroom',
-52: 'oak_tree',
-53: 'orange',
-54: 'orchid',
-55: 'otter',
-56: 'palm_tree',
-57: 'pear',
-58: 'pickup_truck',
-59: 'pine_tree',
-60: 'plain',
-61: 'plate',
-62: 'poppy',
-63: 'porcupine',
-64: 'possum',
-65: 'rabbit',
-66: 'raccoon',
-67: 'ray',
-68: 'road',
-69: 'rocket',
-70: 'rose',
-71: 'sea',
-72: 'seal',
-73: 'shark',
-74: 'shrew',
-75: 'skunk',
-76: 'skyscraper',
-77: 'snail',
-78: 'snake',
-79: 'spider',
-80: 'squirrel',
-81: 'streetcar',
-82: 'sunflower',
-83: 'sweet_pepper',
-84: 'table',
-85: 'tank',
-86: 'telephone',
-87: 'television',
-88: 'tiger',
-89: 'tractor',
-90: 'train',
-91: 'trout',
-92: 'tulip',
-93: 'turtle',
-94: 'wardrobe',
-95: 'whale',
-96: 'willow_tree',
-97: 'wolf',
-98: 'woman',
-99: 'worm',
+    0: "apple",
+    1: "aquarium_fish",
+    2: "baby",
+    3: "bear",
+    4: "beaver",
+    5: "bed",
+    6: "bee",
+    7: "beetle",
+    8: "bicycle",
+    9: "bottle",
+    10: "bowl",
+    11: "boy",
+    12: "bridge",
+    13: "bus",
+    14: "butterfly",
+    15: "camel",
+    16: "can",
+    17: "castle",
+    18: "caterpillar",
+    19: "cattle",
+    20: "chair",
+    21: "chimpanzee",
+    22: "clock",
+    23: "cloud",
+    24: "cockroach",
+    25: "couch",
+    26: "crab",
+    27: "crocodile",
+    28: "cup",
+    29: "dinosaur",
+    30: "dolphin",
+    31: "elephant",
+    32: "flatfish",
+    33: "forest",
+    34: "fox",
+    35: "girl",
+    36: "hamster",
+    37: "house",
+    38: "kangaroo",
+    39: "computer_keyboard",
+    40: "lamp",
+    41: "lawn_mower",
+    42: "leopard",
+    43: "lion",
+    44: "lizard",
+    45: "lobster",
+    46: "man",
+    47: "maple_tree",
+    48: "motorcycle",
+    49: "mountain",
+    50: "mouse",
+    51: "mushroom",
+    52: "oak_tree",
+    53: "orange",
+    54: "orchid",
+    55: "otter",
+    56: "palm_tree",
+    57: "pear",
+    58: "pickup_truck",
+    59: "pine_tree",
+    60: "plain",
+    61: "plate",
+    62: "poppy",
+    63: "porcupine",
+    64: "possum",
+    65: "rabbit",
+    66: "raccoon",
+    67: "ray",
+    68: "road",
+    69: "rocket",
+    70: "rose",
+    71: "sea",
+    72: "seal",
+    73: "shark",
+    74: "shrew",
+    75: "skunk",
+    76: "skyscraper",
+    77: "snail",
+    78: "snake",
+    79: "spider",
+    80: "squirrel",
+    81: "streetcar",
+    82: "sunflower",
+    83: "sweet_pepper",
+    84: "table",
+    85: "tank",
+    86: "telephone",
+    87: "television",
+    88: "tiger",
+    89: "tractor",
+    90: "train",
+    91: "trout",
+    92: "tulip",
+    93: "turtle",
+    94: "wardrobe",
+    95: "whale",
+    96: "willow_tree",
+    97: "wolf",
+    98: "woman",
+    99: "worm",
 }
 
 """Displaying the first image in the training and the test data"""
 
 import matplotlib.pyplot as plt
 
-plt.figure(figsize=[5,5])
+plt.figure(figsize=[5, 5])
 
 # Display the first image in training data
 index = 0
 plt.subplot(121)
-curr_img = np.reshape(x_train[index], (32,32,3))
+curr_img = np.reshape(x_train[index], (32, 32, 3))
 plt.imshow(curr_img)
 curr_label = str(label_dict[y_train[index][0]])
-print(plt.title('(Label: {})'.format(curr_label)))
+print(plt.title("(Label: {})".format(curr_label)))
 
 # Display the first image in testing data
 index = 0
 plt.subplot(122)
-curr_img = np.reshape(x_test[index],(32,32,3))
+curr_img = np.reshape(x_test[index], (32, 32, 3))
 plt.imshow(curr_img)
 curr_label = str(label_dict[y_test[index][0]])
-print(plt.title('(Label: {})'.format(curr_label)))
+print(plt.title("(Label: {})".format(curr_label)))
 
 """## Visualizing the data
 
 Checking the minimum and the maximum values of the training images
 """
 
-np.min(x_train),np.max(x_train)
+np.min(x_train), np.max(x_train)
 
 """Normalizing the pixels between 0 and 1 inclusive"""
 
-x_train_normalized = x_train/np.max(x_train)
+x_train_normalized = x_train / np.max(x_train)
 
-np.min(x_train_normalized),np.max(x_train_normalized)
+np.min(x_train_normalized), np.max(x_train_normalized)
 
 x_train_normalized.shape
 
@@ -194,13 +194,13 @@ x_train_flat.shape
 The shape should be (50000, 3073) (3072+1 because of the added labels) 
 """
 
-feat_cols = ['pixel{}'.format(str(i)) for i in range(x_train_flat.shape[1])]
+feat_cols = ["pixel{}".format(str(i)) for i in range(x_train_flat.shape[1])]
 
 import pandas as pd
 
-df_cifar = pd.DataFrame(x_train_flat,columns=feat_cols)
+df_cifar = pd.DataFrame(x_train_flat, columns=feat_cols)
 
-df_cifar['label'] = y_train
+df_cifar["label"] = y_train
 df_cifar.shape
 
 df_cifar.head()
@@ -210,114 +210,50 @@ df_cifar.head()
 from sklearn.decomposition import PCA
 
 pca_cifar = PCA(n_components=3)
-principalComponents_cifar = pca_cifar.fit_transform(df_cifar.iloc[:,:-1])
+principalComponents_cifar = pca_cifar.fit_transform(df_cifar.iloc[:, :-1])
 
 """Converting from a numpy array to a pandas DataFrame"""
 
-principal_cifar_Df = pd.DataFrame(data = principalComponents_cifar
-             , columns = ['principal component 1', 'principal component 2', 'principal component 3'])
-principal_cifar_Df['y'] = y_train
+principal_cifar_Df = pd.DataFrame(
+    data=principalComponents_cifar,
+    columns=["principal component 1", "principal component 2", "principal component 3"],
+)
+principal_cifar_Df["y"] = y_train
 
 principal_cifar_Df.head()
 
 """Printing the **variance**"""
 
-print('Explained variation per principal component: {}'.format(pca_cifar.explained_variance_ratio_))
+print(
+    "Explained variation per principal component: {}".format(
+        pca_cifar.explained_variance_ratio_
+    )
+)
 
 """Visualizing the CIFAR-100 data in two-dimensions using PC1 and PC2"""
 
 import seaborn as sns
-plt.figure(figsize=(16,10))
+
+plt.figure(figsize=(16, 10))
 sns.scatterplot(
-    x='principal component 1', y='principal component 2',
+    x="principal component 1",
+    y="principal component 2",
     hue="y",
-    palette=sns.color_palette('hls', 100),
+    palette=sns.color_palette("hls", 100),
     data=principal_cifar_Df,
-    legend='full',
-    alpha=0.3
+    legend="full",
+    alpha=0.3,
 )
 
 """Plot for PC2 vs PC3"""
 
-plt.figure(figsize=(16,10))
+plt.figure(figsize=(16, 10))
 sns.scatterplot(
-    x='principal component 2', y='principal component 3',
+    x="principal component 2",
+    y="principal component 3",
     hue="y",
-    palette=sns.color_palette('hls', 100),
+    palette=sns.color_palette("hls", 100),
     data=principal_cifar_Df,
-    legend='full',
-    alpha=0.3
+    legend="full",
+    alpha=0.3,
 )
-
-"""## Speed Up Deep Learning Training using PCA with CIFAR-100 Dataset
-
-Normalizing and rehaping the test data
-"""
-
-x_test_normalized = x_test/np.max(x_test)
-
-x_test_flat = x_test_normalized.reshape(-1, n_cols)
-x_test_flat.shape
-
-pca = PCA(0.9)
-
-pca.fit(x_train_flat)
-
-pca.n_components_
-
-train_img_pca = pca.transform(x_train_flat)
-test_img_pca = pca.transform(x_test_flat)
-
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.utils import np_utils
-from keras.optimizers import RMSprop
-
-y_train = np_utils.to_categorical(y_train)
-y_test = np_utils.to_categorical(y_test)
-
-"""Training with PCA"""
-
-batch_size = 128
-num_classes = nClasses
-num_components = pca.n_components_
-epochs = 20
-
-model = Sequential()
-model.add(Dense(1024, activation='relu', input_shape=(num_components,)))
-model.add(Dense(1024, activation='relu'))
-model.add(Dense(512, activation='relu'))
-model.add(Dense(256, activation='relu'))
-model.add(Dense(num_classes, activation='softmax'))
-
-model.summary()
-
-model.compile(loss='categorical_crossentropy',
-              optimizer=RMSprop(),
-              metrics=['accuracy'])
-
-history = model.fit(train_img_pca, y_train,batch_size=batch_size,epochs=epochs,verbose=1,
-                    validation_data=(test_img_pca, y_test))
-
-"""Training without PCA"""
-
-batch_size = 128
-num_classes = nClasses
-num_components = n_cols
-epochs = 20
-
-model = Sequential()
-model.add(Dense(1024, activation='relu', input_shape=(num_components,)))
-model.add(Dense(1024, activation='relu'))
-model.add(Dense(512, activation='relu'))
-model.add(Dense(256, activation='relu'))
-model.add(Dense(num_classes, activation='softmax'))
-
-model.summary()
-
-model.compile(loss='categorical_crossentropy',
-              optimizer=RMSprop(),
-              metrics=['accuracy'])
-
-history = model.fit(x_train_flat, y_train,batch_size=batch_size,epochs=epochs,verbose=1,
-                    validation_data=(x_test_flat, y_test))
