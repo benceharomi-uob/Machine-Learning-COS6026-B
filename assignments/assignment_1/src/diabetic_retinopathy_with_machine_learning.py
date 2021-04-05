@@ -11,7 +11,7 @@ Original file is located at
 ## Loading the dataset
 """
 
-url = 'https://drive.google.com/uc?export=download&id=1IFUE1BK7XaRZxa3351GhjlxdtL6ZIRPE'
+url = '../data/17006903.csv'
 
 names = ['quality', 'retinal_abnormality']
 names.extend(['feat1_{}'.format(str(i)) for i in range(6)])
